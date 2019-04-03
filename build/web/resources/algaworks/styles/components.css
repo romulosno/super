@@ -1,0 +1,159 @@
+/* TOGGLE */
+.aw-toggle {
+    float: left;
+    line-height: 50px;
+    margin-left: 45px;
+
+    color: #fff;
+}
+
+
+/* Imagem */
+.aw-toggleimg {
+    float: left;	
+    margin-left: 25px;
+    margin-top: 10px;
+
+}
+
+/* Barra Usuariot */
+.aw-toggleusuario {
+    float: right;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    animation-name: fadeInDown;
+}
+
+.dropdown {
+    float: right;
+    margin-top: 8px;
+    margin-right: 7px;
+}
+
+.aw-menuusu{
+    text-decoration: none;
+    font-weight: 500;
+    text-align: left;
+    color: white;
+    display: inline-block;
+    margin: 4px 5px 5px 3px;
+    vertical-align: top;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    right: 10px;
+    animation-duration: 0.4s;
+    animation-name: fadeInDown;
+}
+.dropdown-contenticons{
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 12px;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px 0 rgba(0, 3, 6, 0.16);
+    animation-duration: 0.4s;
+    animation-name: fadeInDown;
+    
+
+}
+
+.dropdown-contentlinhasicones{
+     text-decoration:none;
+     display: block;
+     color: #666666;
+     padding: 10px 13px;
+}
+
+.dropdown-contentlinhas{
+    display: block;
+    
+   
+}
+.dropdown-contentlinhas:hover{
+    background-color: #ededed
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content:hover{
+    
+}
+
+
+.botaoConfiguracao{
+    background-image:url("img/iconsConfiguracao.png");
+}
+
+
+/* MENU */
+.aw-menu {
+    font-size: 1.1em;
+}
+
+/* MENU SEPARADORES */
+.header{
+    color: #4b646f;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-transform: uppercase;
+    overflow: hidden;
+    box-sizing: border-box;
+    line-height: 1.42857143;
+    font-weight: 400;
+    text-overflow: clip;
+    background: #1a2226;
+    font-size: 12px;
+    padding: 10px 25px 10px 15px;
+    font-family: "Source Sans Pro","Trebuchet MS","Helvetica Neue",Helvetica,Arial,sans-serif;
+    position: relative;
+    margin: 0;
+}
+
+.aw-menu > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.aw-menu > ul a {
+    display: block;
+    padding: 10px 15px;
+
+    text-decoration: none;
+    font-weight: 500;
+    color: #b8c7ce;
+} 
+
+.aw-menu > ul i {
+    margin-right: 6px;
+}
+
+.aw-menu > ul a:hover, .aw-menu > ul a:focus {
+    background-color: #4e6772;
+}
+
+.aw-menu > ul .is-selected {
+    border-left: 3px solid #1e94d2;
+    background-color: #f3f3f3;
+}
+
+.aw-menu > ul .is-selected a {
+    margin-left: -3px;
+    color: #1e94d2;
+}
+
+/* PAGE-TITLE */
+.aw-page-title {
+    margin: 0;
+    padding: 20px 0;
+
+    font-size: 1.5em;
+    color: #373737;
+}

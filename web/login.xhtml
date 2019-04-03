@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <link type="text/css" rel="stylesheet" href="resources/theme/jquery-ui.css" />
+        <link type="text/css" rel="stylesheet" href="resources/theme/jquery-ui.structure.min.css.css" />
+        <link type="text/css" rel="stylesheet" href="resources/theme/jquery-ui.theme.min.css" />
+        <link type="text/css" rel="stylesheet" href="resources/theme/bg.css" />
+        <link rel="shortcut icon" href="img/marca_ueg.ico" type="image/x-icon" />
+
+        <title>Tela de Login</title>
+    </h:head>
+
+    <h:body>
+        <h:form id="loginForm" prependId="false">
+            <p:growl id="messages" showSummary="true" showDetail="true"  />
+            <p:dialog id="dialogAcesso" showHeader="false" visible="true" class="cssdialog">
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="CPF" for="j_username" /><BR/>
+                    <p:inputText size="20" id="j_username"/><BR/>
+                    <p:outputLabel value="Senha" for="j_password" /><BR/>
+                    <p:password size="20"  id="j_password"/><BR/>
+                </h:panelGrid>
+                <p:separator />
+                <div align="center">
+                    <h:panelGrid columns="3">                        
+                        <h:commandButton type="submit" id="login" value="Entrar" action="#{serviceControle.doLogin()}" style="border-width:0px; text-align: center; border-radius: 5px; height: 29px; width: 70px;  background: #427BCA; color: #ffffff" />                         
+                    </h:panelGrid>
+                    <p:separator />
+                    <h:link value="Esqueci a senha" style="color: #4272DB" outcome="/View/UnSecured/esqueceu_a_senha"/>
+                </div>
+            </p:dialog>
+        </h:form>
+
+        <c:if test="${SPRING_SECURITY_LAST_EXCEPTION.message != null}">
+            <h:outputText value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
+            <p:growl>
+                <f:event type="preRenderComponent" listener="#{controleVisao.erroDeLogin()}" />
+            </p:growl>
+        </c:if>
+        
+        <h:outputScript name="js/ripple-effect.js" library="adamantium-layout" />
+        <h:outputScript name="js/perfect-scrollbar.js"
+                        library="adamantium-layout" />
+        <h:outputScript name="js/layout.js" library="adamantium-layout" />
+        <h:outputStylesheet name="css/core-layout.css"
+                            library="adamantium-layout" />
+        <h:outputStylesheet name="css/animate.css" library="adamantium-layout" />
+        <h:outputStylesheet name="css/adamantium-font.css"
+                            library="adamantium-layout" />
+        <h:outputStylesheet name="css/ripple-effect.css"
+                            library="adamantium-layout" />
+        <h:outputStylesheet name="css/perfect-scrollbar.css"
+                            library="adamantium-layout" />
+        <h:outputStylesheet name="css/font-awesome.css"
+                            library="adamantium-layout" />
+        <h:outputStylesheet name="css/adamantium-layout.css"
+                            library="adamantium-layout" />
+
+    </h:body>
+
+</html>

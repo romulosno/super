@@ -1,0 +1,57 @@
+.conteudo{
+max-width: 500px;
+  margin: auto;
+      margin-top:12%;
+
+}
+table{
+    background-color:white;
+    
+}
+
+h1{
+  text-align: center;
+  color: #276cb5;
+}
+
+
+th{
+  font-weight: normal;
+  background-color: #4685c9;
+  color: white;
+}
+
+.direita{
+    text-align: right;
+    float: right;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #4685c9;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #004e98;
+  color: white;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #276cb5;
+  color: black;
+}
+
+

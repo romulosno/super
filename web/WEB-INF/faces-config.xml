@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <validator>
+        <validator-id>validaTipoDeArquivo</validator-id>
+        <validator-class>util.ValidaTipoDeArquivo</validator-class>
+    </validator>
+    <validator>
+        <validator-id>validaCPF</validator-id>
+        <validator-class>util.ValidadorCPF</validator-class>
+    </validator>
+    
+    <!-- JSF and Spring are integrated -->
+    <application>
+        <el-resolver>
+            org.springframework.web.jsf.el.SpringBeanFacesELResolver
+        </el-resolver>
+    	
+    </application>	
+        
+    <managed-bean>
+        <managed-bean-name>loginController</managed-bean-name> 
+        <managed-bean-class>controle.ControleLogin</managed-bean-class>
+      
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+        
+    <navigation-rule>           
+        <navigation-case>
+            <from-outcome>retornarAoLogin</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>           
+        <navigation-case>
+            <from-outcome>retornarAoIndex</from-outcome>
+            <to-view-id>/index.html</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    
+</faces-config>

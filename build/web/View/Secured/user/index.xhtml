@@ -1,0 +1,72 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/Layout.xhtml">
+    <ui:define name="content">
+
+        <!--
+        <div class="topnav">
+            <a href="#home">Início</a>
+            <a href="">Questões respondidas</a>
+            <a class="active" href="">Questões não-respondidas</a>
+            <a href="">Orientações</a>
+            <div class="direita"><a href="">User: </a></div>
+        </div>
+        -->
+        <div class="conteudo" style="overflow-x:auto;">
+            <h1>Questionamentos não respondidos</h1>
+            <!-- Preenchimento da tabela de questões -->
+            <p:dataTable styleClass="dataTableSuper" id="perguntas" 
+                         value="#{serviceControle.buscarQuestoesNaoRespondidas()}" 
+                         var="q"
+                         paginator="true"
+                         rows="10"                     
+                         >
+                <p:column sortBy="#{q.id_questao}" >
+                    <f:facet name="header">ID</f:facet>
+                        #{q.id_questao}
+                </p:column>
+                <p:column headerText="Título" colspan="6">
+                    <div class="tituloTabelaConteudo">
+                    #{q.titulo}
+                    </div>
+                </p:column>
+                <p:column headerText="Ações">
+                    <div align="right">
+                        <p:commandLink style="color: RED; font-weight: bold; margin-top: 2px;" value="X" onclick="PF('rejeitar').show()"/> 
+                        <br />
+                        <p:commandLink value="Descrição" onclick="PF('descri').show(); #{serviceControle.setPkQuestao(q.id_questao)}"/>
+                        <br/>
+                        <p:commandLink value="Responder" onclick="PF('responder').show()"/> 
+                    </div>
+                    <!-- Dialog para a Descrição -->
+                    <p:dialog header="Descrição - Questão #{q.id_questao}" widgetVar="descri" minHeight="40">
+                        <p:outputLabel value="#{q.descricao}"/>
+                    </p:dialog>
+                </p:column>
+            </p:dataTable>
+
+            <!-- Dialog para a resposta -->
+            <h:form>
+                <p:dialog styleClass="dialogSuper" header="Responder - Questão #{q.id_questao}" widgetVar="responder" minHeight="40">
+                    <p:inputTextarea rows="6" cols="33" value="#{serviceControle.resposta}"/><br />
+                    <p:commandButton value="Assunto" />
+                    <p:commandButton value="Responder" update="perguntas" action="#{serviceControle.registrarResposta()}" oncomplete="PF('responder').hide()"/>
+                </p:dialog>
+            </h:form>
+
+            <!-- Dialog para a rejeição -->
+            <h:form>
+                <p:dialog styleClass="dialogSuper" header="Rejeição" widgetVar="rejeitar" minHeight="40">
+                    <p:outputLabel value="Motivo (opcional)"/>
+                    <p:inputTextarea rows="6" cols="33" value="#{serviceControle.resposta}"/><br />
+                    <p:commandButton value="Fechar" style="position: absolute; left: 35%"/>
+                </p:dialog>
+            </h:form>
+
+        </div>
+    </ui:define>
+
+</ui:composition>

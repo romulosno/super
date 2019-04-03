@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <link type="text/css" rel="stylesheet" href="../../theme/jquery-ui.css" />
+        <link type="text/css" rel="stylesheet" href="../../theme/jquery-ui.theme.min.css" />
+        <link type="text/css" rel="stylesheet" href="../../theme/bginfo.css" />
+        <link rel="shortcut icon" href="../../img/solicita.png" type="image/x-icon" />
+
+        <title>Esqueci a Senha</title>
+    </h:head>
+
+    <h:body>
+        <h:form id="loginForm" prependId="false">
+            <p:growl id="messages" showSummary="true" showDetail="true"  />
+
+            <p:dialog id="dialogAcesso" showHeader="false" visible="true" width="500" height="400" position="350,140" >
+                <p:spacer width="100" height="27" />
+                <div align="center" style="font-size:20px;">
+                    <p:outputLabel value="Esqueceu sua senha ?"  style="color: #999999;" />
+                </div>
+                <p:spacer width="100" height="5" />
+                <div align="center">
+                    <img src="../../img/pergunta.png" />
+                </div>
+                
+                <p:spacer width="100" height="50" />
+                
+                <div align="center" style="" >
+                    <p:outputLabel value="Por favor, insira seu email abaixo para receber sua nova senha de acesso."  style="color: #999999;" />
+                </div>
+                <p:spacer width="" height="2" />
+                <div align="center"  >
+                    <p:inputText size="40" value="#{serviceControle.emailParaSenha}" />
+                </div>
+                <p:spacer width="100" height="20" />
+                <div align="center">
+                    <h:panelGrid columns="2" cellpadding="7">                        
+                        <h:commandButton type="submit" id="confirm" value="Enviar" action="#{serviceControle.buscarUsuarioPorEmail()}" style="border-width:0px; text-align: center; border-radius: 5px; height: 29px; width: 70px;  background: #427BCA; color: #ffffff"/>
+                        <h:commandButton type="submit" id="voltar" value="Voltar" action="#{controleVisao.retornarAoLogin()}" style="border-width:0px; text-align: center; border-radius: 5px; height: 29px; width: 70px;  background: #427BCA; color: #ffffff"/>
+                    </h:panelGrid>
+                </div>
+                <p:spacer width="100" height="15" />
+            </p:dialog>
+        </h:form>
+        
+        <div id="container">
+            <img src="../../img/Avisos.png" height="450" width="350"/>
+        </div>
+
+
+    </h:body>
+
+</html>

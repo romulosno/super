@@ -1,0 +1,29 @@
+html, body{
+    background-color: #122639;
+    background-image: url(".../img/logo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 24%; 
+    background-size: 250px;
+
+
+    .centralizarimgagem {
+        text-align: right;
+    }
+
+    .ui-rating{
+        width: 50px !important;
+    }
+
+    
+
+}
+
+
+.cssdialog{
+        width: 200px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 20px 15px 5px 14px;
+    }
