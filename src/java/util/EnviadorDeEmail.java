@@ -18,8 +18,8 @@ public class EnviadorDeEmail {
 
     public static void enviarEmail(String assunto, String mensagem, String email, String senha) {
 
-        final String emailDeEnvio = "sistemaSuperUeg@gmail.com";
-        final String senhaEmail = "sistema@Super123";
+        final String emailDeEnvio = "email";
+        final String senhaEmail = "senha";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
